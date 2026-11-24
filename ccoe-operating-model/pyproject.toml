@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ccoe-toolkit"
+version = "1.0.0"
+description = "Cloud Center of Excellence operating model toolkit: RACI, ADRs, guardrails as code"
+requires-python = ">=3.9"
+
+[project.scripts]
+ccoe = "ccoe.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

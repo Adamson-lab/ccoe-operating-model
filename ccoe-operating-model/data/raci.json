@@ -1,0 +1,294 @@
+{
+ "version": "1.0",
+ "legend": {
+  "R": "Responsible",
+  "A": "Accountable",
+  "AR": "Accountable and Responsible",
+  "C": "Consulted",
+  "I": "Informed"
+ },
+ "roles": [
+  {
+   "id": "EXEC",
+   "name": "Executive Sponsor (CIO/CTO)",
+   "short": "Exec Sponsor"
+  },
+  {
+   "id": "CC",
+   "name": "Cloud Council",
+   "short": "Cloud Council"
+  },
+  {
+   "id": "CCOE",
+   "name": "CCoE Core Team",
+   "short": "CCoE Core"
+  },
+  {
+   "id": "ARB",
+   "name": "Architecture Review Board",
+   "short": "ARB"
+  },
+  {
+   "id": "SEC",
+   "name": "Security & Risk",
+   "short": "Security & Risk"
+  },
+  {
+   "id": "FIN",
+   "name": "FinOps",
+   "short": "FinOps"
+  },
+  {
+   "id": "PLAT",
+   "name": "Platform Engineering",
+   "short": "Platform Eng"
+  },
+  {
+   "id": "BU",
+   "name": "BU Cloud Champions & Product Teams",
+   "short": "BU / Product"
+  },
+  {
+   "id": "AUD",
+   "name": "Internal Audit",
+   "short": "Internal Audit"
+  }
+ ],
+ "activities": [
+  {
+   "id": "A01",
+   "group": "Strategy",
+   "name": "Define cloud strategy and principles",
+   "raci": {
+    "EXEC": "A",
+    "CC": "R",
+    "CCOE": "C",
+    "ARB": "C",
+    "SEC": "C",
+    "FIN": "C",
+    "PLAT": "I",
+    "BU": "I",
+    "AUD": "I"
+   }
+  },
+  {
+   "id": "A02",
+   "group": "Strategy",
+   "name": "Approve funding and chargeback model",
+   "raci": {
+    "EXEC": "A",
+    "CC": "C",
+    "CCOE": "C",
+    "FIN": "R",
+    "BU": "I",
+    "AUD": "I"
+   }
+  },
+  {
+   "id": "A03",
+   "group": "Strategy",
+   "name": "Set risk appetite and data classification",
+   "raci": {
+    "EXEC": "C",
+    "CC": "A",
+    "CCOE": "C",
+    "ARB": "C",
+    "SEC": "R",
+    "FIN": "I",
+    "PLAT": "I",
+    "BU": "I",
+    "AUD": "C"
+   }
+  },
+  {
+   "id": "A04",
+   "group": "Architecture",
+   "name": "Maintain reference architectures",
+   "raci": {
+    "CC": "I",
+    "CCOE": "R",
+    "ARB": "A",
+    "SEC": "C",
+    "FIN": "I",
+    "PLAT": "R",
+    "BU": "C"
+   }
+  },
+  {
+   "id": "A05",
+   "group": "Architecture",
+   "name": "Review and approve ADRs",
+   "raci": {
+    "CC": "I",
+    "CCOE": "R",
+    "ARB": "A",
+    "SEC": "C",
+    "PLAT": "C",
+    "BU": "C",
+    "AUD": "I"
+   }
+  },
+  {
+   "id": "A06",
+   "group": "Platform",
+   "name": "Operate landing zone and account vending",
+   "raci": {
+    "CCOE": "A",
+    "ARB": "C",
+    "SEC": "C",
+    "FIN": "I",
+    "PLAT": "R",
+    "BU": "I"
+   }
+  },
+  {
+   "id": "A07",
+   "group": "Platform",
+   "name": "Maintain golden-path IaC modules",
+   "raci": {
+    "CCOE": "R",
+    "ARB": "I",
+    "SEC": "C",
+    "PLAT": "A",
+    "BU": "C"
+   }
+  },
+  {
+   "id": "A08",
+   "group": "Security",
+   "name": "Author and maintain guardrail policies",
+   "raci": {
+    "CC": "I",
+    "CCOE": "R",
+    "ARB": "C",
+    "SEC": "A",
+    "PLAT": "R",
+    "BU": "C",
+    "AUD": "I"
+   }
+  },
+  {
+   "id": "A09",
+   "group": "Security",
+   "name": "Approve exceptions and waivers",
+   "raci": {
+    "CC": "I",
+    "CCOE": "R",
+    "ARB": "C",
+    "SEC": "A",
+    "BU": "R",
+    "AUD": "I"
+   }
+  },
+  {
+   "id": "A10",
+   "group": "Security",
+   "name": "Monitor continuous compliance and drift",
+   "raci": {
+    "CCOE": "C",
+    "SEC": "A",
+    "PLAT": "R",
+    "BU": "R",
+    "AUD": "I"
+   }
+  },
+  {
+   "id": "A11",
+   "group": "Security",
+   "name": "Cloud incident response",
+   "raci": {
+    "EXEC": "I",
+    "CC": "I",
+    "CCOE": "C",
+    "SEC": "A",
+    "PLAT": "R",
+    "BU": "R"
+   }
+  },
+  {
+   "id": "A12",
+   "group": "Security",
+   "name": "Independent control assurance",
+   "raci": {
+    "EXEC": "I",
+    "CC": "I",
+    "CCOE": "C",
+    "SEC": "C",
+    "AUD": "AR"
+   }
+  },
+  {
+   "id": "A13",
+   "group": "FinOps",
+   "name": "Enforce tagging and cost allocation",
+   "raci": {
+    "CCOE": "R",
+    "SEC": "I",
+    "FIN": "A",
+    "PLAT": "R",
+    "BU": "R",
+    "AUD": "I"
+   }
+  },
+  {
+   "id": "A14",
+   "group": "FinOps",
+   "name": "Manage commitments and rightsizing",
+   "raci": {
+    "EXEC": "I",
+    "CCOE": "C",
+    "FIN": "A",
+    "PLAT": "R",
+    "BU": "C"
+   }
+  },
+  {
+   "id": "A15",
+   "group": "FinOps",
+   "name": "Publish showback and chargeback",
+   "raci": {
+    "EXEC": "I",
+    "CC": "I",
+    "CCOE": "C",
+    "FIN": "AR",
+    "BU": "I"
+   }
+  },
+  {
+   "id": "A16",
+   "group": "People",
+   "name": "Run cloud skills and certification program",
+   "raci": {
+    "EXEC": "I",
+    "CC": "C",
+    "CCOE": "AR",
+    "FIN": "I",
+    "BU": "R"
+   }
+  },
+  {
+   "id": "A17",
+   "group": "People",
+   "name": "Run cloud champions network",
+   "raci": {
+    "EXEC": "I",
+    "CC": "I",
+    "CCOE": "AR",
+    "BU": "R"
+   }
+  },
+  {
+   "id": "A18",
+   "group": "Delivery",
+   "name": "Onboard and migrate workloads",
+   "raci": {
+    "CCOE": "C",
+    "ARB": "C",
+    "SEC": "C",
+    "FIN": "C",
+    "PLAT": "R",
+    "BU": "AR"
+   }
+  }
+ ]
+}

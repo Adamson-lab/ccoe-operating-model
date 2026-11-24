@@ -1,0 +1,15 @@
+{
+ "exceptions": [
+  {
+   "id": "EXC-001",
+   "guardrail": "G-DATA-002",
+   "resource": "aws_ebs_volume.legacy_batch",
+   "created": "2026-09-01",
+   "expires": "2027-01-31",
+   "approver": "Security & Risk (delegate)",
+   "ticket": "RISK-1042",
+   "justification": "Legacy batch volume pending migration to encrypted volume",
+   "compensating_controls": "Isolated subnet, no external access, migration scheduled Q1"
+  }
+ ]
+}

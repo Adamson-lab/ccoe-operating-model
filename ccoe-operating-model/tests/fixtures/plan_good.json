@@ -1,0 +1,156 @@
+{
+ "configuration": {
+  "provider_config": {
+   "aws": {
+    "name": "aws",
+    "expressions": {
+     "region": {
+      "constant_value": "eu-west-1"
+     }
+    }
+   }
+  }
+ },
+ "resource_changes": [
+  {
+   "address": "aws_ebs_volume.data",
+   "type": "aws_ebs_volume",
+   "change": {
+    "actions": [
+     "create"
+    ],
+    "after": {
+     "encrypted": true,
+     "type": "gp3",
+     "tags": {
+      "owner": "platform",
+      "cost-center": "CC-100",
+      "environment": "prod",
+      "data-classification": "internal"
+     }
+    }
+   }
+  },
+  {
+   "address": "aws_db_instance.main",
+   "type": "aws_db_instance",
+   "change": {
+    "actions": [
+     "create"
+    ],
+    "after": {
+     "storage_encrypted": true,
+     "tags": {
+      "owner": "platform",
+      "cost-center": "CC-100",
+      "environment": "prod",
+      "data-classification": "internal"
+     }
+    }
+   }
+  },
+  {
+   "address": "aws_s3_bucket_public_access_block.b",
+   "type": "aws_s3_bucket_public_access_block",
+   "change": {
+    "actions": [
+     "create"
+    ],
+    "after": {
+     "block_public_acls": true,
+     "block_public_policy": true,
+     "ignore_public_acls": true,
+     "restrict_public_buckets": true
+    }
+   }
+  },
+  {
+   "address": "aws_instance.app",
+   "type": "aws_instance",
+   "change": {
+    "actions": [
+     "create"
+    ],
+    "after": {
+     "associate_public_ip_address": false,
+     "metadata_options": [
+      {
+       "http_tokens": "required"
+      }
+     ],
+     "tags": {
+      "owner": "platform",
+      "cost-center": "CC-100",
+      "environment": "prod",
+      "data-classification": "internal"
+     }
+    }
+   }
+  },
+  {
+   "address": "aws_security_group.app",
+   "type": "aws_security_group",
+   "change": {
+    "actions": [
+     "create"
+    ],
+    "after": {
+     "ingress": [
+      {
+       "cidr_blocks": [
+        "10.0.0.0/8"
+       ],
+       "from_port": 22,
+       "to_port": 22,
+       "protocol": "tcp",
+       "ipv6_cidr_blocks": []
+      }
+     ]
+    }
+   }
+  },
+  {
+   "address": "aws_kms_key.k",
+   "type": "aws_kms_key",
+   "change": {
+    "actions": [
+     "create"
+    ],
+    "after": {
+     "enable_key_rotation": true,
+     "tags": {
+      "owner": "platform",
+      "cost-center": "CC-100",
+      "environment": "prod",
+      "data-classification": "internal"
+     }
+    }
+   }
+  },
+  {
+   "address": "aws_cloudtrail.t",
+   "type": "aws_cloudtrail",
+   "change": {
+    "actions": [
+     "create"
+    ],
+    "after": {
+     "is_multi_region_trail": true,
+     "enable_log_file_validation": true
+    }
+   }
+  },
+  {
+   "address": "aws_iam_policy.ro",
+   "type": "aws_iam_policy",
+   "change": {
+    "actions": [
+     "create"
+    ],
+    "after": {
+     "policy": "{\"Statement\": [{\"Effect\": \"Allow\", \"Action\": [\"s3:GetObject\"], \"Resource\": \"*\"}]}"
+    }
+   }
+  }
+ ]
+}

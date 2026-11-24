@@ -1,0 +1,140 @@
+{
+ "as_of": "2026-11-01",
+ "kpis": [
+  {
+   "id": "K01",
+   "category": "Governance",
+   "name": "ADR median cycle time",
+   "unit": "days",
+   "target": 10,
+   "current": 14,
+   "better": "lower"
+  },
+  {
+   "id": "K02",
+   "category": "Governance",
+   "name": "Exceptions past expiry",
+   "unit": "count",
+   "target": 0,
+   "current": 1,
+   "better": "lower"
+  },
+  {
+   "id": "K03",
+   "category": "Governance",
+   "name": "Architecture changes recorded as ADR",
+   "unit": "%",
+   "target": 90,
+   "current": 82,
+   "better": "higher"
+  },
+  {
+   "id": "K04",
+   "category": "Platform",
+   "name": "Account vending lead time",
+   "unit": "hours",
+   "target": 4,
+   "current": 6,
+   "better": "lower"
+  },
+  {
+   "id": "K05",
+   "category": "Platform",
+   "name": "Workloads on golden paths",
+   "unit": "%",
+   "target": 80,
+   "current": 58,
+   "better": "higher"
+  },
+  {
+   "id": "K06",
+   "category": "Platform",
+   "name": "Accounts created via factory",
+   "unit": "%",
+   "target": 100,
+   "current": 97,
+   "better": "higher"
+  },
+  {
+   "id": "K07",
+   "category": "Security",
+   "name": "Guardrail coverage",
+   "unit": "%",
+   "target": 95,
+   "current": 91,
+   "better": "higher"
+  },
+  {
+   "id": "K08",
+   "category": "Security",
+   "name": "Mandatory violations per 100 deploys",
+   "unit": "count",
+   "target": 2,
+   "current": 3.1,
+   "better": "lower"
+  },
+  {
+   "id": "K09",
+   "category": "Security",
+   "name": "Critical finding MTTR",
+   "unit": "days",
+   "target": 7,
+   "current": 9,
+   "better": "lower"
+  },
+  {
+   "id": "K10",
+   "category": "FinOps",
+   "name": "Tag compliance",
+   "unit": "%",
+   "target": 98,
+   "current": 94,
+   "better": "higher"
+  },
+  {
+   "id": "K11",
+   "category": "FinOps",
+   "name": "Cloud waste",
+   "unit": "%",
+   "target": 8,
+   "current": 12,
+   "better": "lower"
+  },
+  {
+   "id": "K12",
+   "category": "FinOps",
+   "name": "Commitment coverage",
+   "unit": "%",
+   "target": 70,
+   "current": 64,
+   "better": "higher"
+  },
+  {
+   "id": "K13",
+   "category": "People",
+   "name": "Certified cloud engineers",
+   "unit": "%",
+   "target": 60,
+   "current": 47,
+   "better": "higher"
+  },
+  {
+   "id": "K14",
+   "category": "People",
+   "name": "BUs with active champion",
+   "unit": "%",
+   "target": 100,
+   "current": 80,
+   "better": "higher"
+  },
+  {
+   "id": "K15",
+   "category": "People",
+   "name": "Training satisfaction (CSAT 1-5)",
+   "unit": "score",
+   "target": 4.3,
+   "current": 4.4,
+   "better": "higher"
+  }
+ ]
+}

@@ -1,0 +1,144 @@
+{
+ "configuration": {
+  "provider_config": {
+   "aws": {
+    "name": "aws",
+    "expressions": {
+     "region": {
+      "constant_value": "ap-southeast-1"
+     }
+    }
+   }
+  }
+ },
+ "resource_changes": [
+  {
+   "address": "aws_ebs_volume.legacy_batch",
+   "type": "aws_ebs_volume",
+   "change": {
+    "actions": [
+     "create"
+    ],
+    "after": {
+     "encrypted": false,
+     "type": "gp2",
+     "tags": {
+      "owner": "platform",
+      "cost-center": "CC-100",
+      "environment": "prod",
+      "data-classification": "internal"
+     }
+    }
+   }
+  },
+  {
+   "address": "aws_ebs_volume.scratch",
+   "type": "aws_ebs_volume",
+   "change": {
+    "actions": [
+     "create"
+    ],
+    "after": {
+     "encrypted": false,
+     "type": "gp3",
+     "tags": {
+      "owner": "x"
+     }
+    }
+   }
+  },
+  {
+   "address": "aws_db_instance.main",
+   "type": "aws_db_instance",
+   "change": {
+    "actions": [
+     "create"
+    ],
+    "after": {
+     "storage_encrypted": false,
+     "tags": {
+      "owner": "platform",
+      "cost-center": "CC-100",
+      "environment": "prod",
+      "data-classification": "internal"
+     }
+    }
+   }
+  },
+  {
+   "address": "aws_instance.web",
+   "type": "aws_instance",
+   "change": {
+    "actions": [
+     "create"
+    ],
+    "after": {
+     "associate_public_ip_address": true,
+     "metadata_options": [
+      {
+       "http_tokens": "optional"
+      }
+     ],
+     "tags": {
+      "owner": "platform",
+      "cost-center": "CC-100",
+      "environment": "prod",
+      "data-classification": "internal"
+     }
+    }
+   }
+  },
+  {
+   "address": "aws_security_group.open",
+   "type": "aws_security_group",
+   "change": {
+    "actions": [
+     "create"
+    ],
+    "after": {
+     "ingress": [
+      {
+       "cidr_blocks": [
+        "0.0.0.0/0"
+       ],
+       "from_port": 22,
+       "to_port": 22,
+       "protocol": "tcp",
+       "ipv6_cidr_blocks": []
+      }
+     ]
+    }
+   }
+  },
+  {
+   "address": "aws_iam_policy.admin",
+   "type": "aws_iam_policy",
+   "change": {
+    "actions": [
+     "create"
+    ],
+    "after": {
+     "policy": "{\"Statement\": [{\"Effect\": \"Allow\", \"Action\": \"*\", \"Resource\": \"*\"}]}"
+    }
+   }
+  },
+  {
+   "address": "aws_kms_key.k",
+   "type": "aws_kms_key",
+   "change": {
+    "actions": [
+     "create"
+    ],
+    "after": {
+     "enable_key_rotation": false,
+     "tags": {
+      "owner": "platform",
+      "cost-center": "CC-100",
+      "environment": "prod",
+      "data-classification": "internal"
+     }
+    }
+   }
+  }
+ ]
+}

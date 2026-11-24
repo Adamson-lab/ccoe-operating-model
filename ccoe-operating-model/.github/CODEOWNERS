@@ -1,0 +1,5 @@
+/adr/                @Adamson-lab/arb
+/data/guardrails.json @Adamson-lab/security
+/data/exceptions.json @Adamson-lab/exception-board
+/data/raci.json      @Adamson-lab/ccoe-core
+/policies/           @Adamson-lab/security
